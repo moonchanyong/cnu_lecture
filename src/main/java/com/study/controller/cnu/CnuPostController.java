@@ -5,12 +5,12 @@ import com.study.domain.cnu.CnuPost;
 import com.study.domain.cnu.CnuPostComment;
 import com.study.repository.jdbc.CnuJdbcRepository;
 import com.study.repository.mybatis.CnuRepository;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-=======
+//=======
 import com.study.service.cnu.CnuService;
->>>>>>> refs/remotes/origin/week3_show_comment_count
+//>>>>>>> refs/remotes/origin/week3_show_comment_count
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -77,6 +77,7 @@ public class CnuPostController {
     	{
     		return "redirect:/post";
     	}
+    	cnuPost.setContent(cnuPost.getContent().replaceAll("\n", "<br>"));
         cnuPost.increaseViewCount();
 		model.addAttribute("cnuPost", cnuPost); 
 
